@@ -6,7 +6,7 @@ import * as QS from "./sortingalgs/QuickSort"
 
 export default function Sort() {
   const inputRef = useRef()
-  const [ output, setOutput ] = useState("")
+  const [ output, setOutput ] = useState("Your array here...")
 
   function handleInputChange(e) {
     try {
@@ -40,17 +40,14 @@ export default function Sort() {
   return (
     <>
     <h3>Enter some comma-separated numbers below:</h3>
-    <input ref={inputRef} type="text" onChange={handleInputChange}/>
+    <input ref={inputRef} type="text" id="sortInput" onChange={handleInputChange}/>
     <h3>Now select a sorting algorithm:</h3>
     <form>
-      <input type="radio" id="mergesort" name="sortingalg" value="Merge Sort"/>
-      <label>Merge Sort</label><br/>
-      <input type="radio" id="quicksort" name="sortingalg" value="Quick Sort"/>
-      <label>Quick Sort</label><br/> 
-      <input type="radio" id="bubblesort" name="sortingalg" value="Bubble Sort"/>
-      <label>Bubble Sort</label><br/>
+      <label><input type="radio" id="mergesort" name="sortingalg" value="Merge Sort"/>Merge Sort</label>
+      <label><input type="radio" id="quicksort" name="sortingalg" value="Quick Sort"/>Quick Sort</label>
+      <label><input type="radio" id="bubblesort" name="sortingalg" value="Bubble Sort"/>Bubble Sort</label>
     </form>
-    <input type="button" onClick={handleSortClick} value="Sort"/>
+    <input type="button" id="sortButton" onClick={handleSortClick} value="Sort"/>
     <hr/>
     {output}
     </>
