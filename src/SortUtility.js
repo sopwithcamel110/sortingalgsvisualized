@@ -63,3 +63,10 @@
     arr[i] = arr[j]
     arr[j] = temp
   }
+  /**
+   * Pauses execution for a time set by the range input
+   */
+  export async function wait() {
+    let seconds = 3 - 2.75*((document.querySelector('input[id="speedInput"]').value)/100) // Range: 0.25-3 seconds
+    await new Promise(r => setTimeout(r, seconds * 1000));
+  }

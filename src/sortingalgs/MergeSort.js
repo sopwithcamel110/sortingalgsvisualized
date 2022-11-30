@@ -1,4 +1,5 @@
 import * as SortUtil from "../SortUtility"
+
 function merge(a, b) {
   let newArr = []
   let aIdx = 0
@@ -13,6 +14,7 @@ function merge(a, b) {
       bIdx++
     }
   }
+  // At this point, either a or b is empty
   while (aIdx < a.length) {
     newArr.push(a[aIdx])
     aIdx++
@@ -33,7 +35,7 @@ async function mergesort(setOut, arr, lo, hi) {
   let b = await mergesort(setOut, arr, mid+1, hi)
   let merged = merge(a,b)
   setOut(SortUtil.arrToString(merged, ","))
-  await new Promise(r => setTimeout(r, 1000));
+  await SortUtil.wait()
   return merged
 }
 

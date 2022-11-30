@@ -50,6 +50,10 @@ export default function Sort() {
     <input type="button" id="sortButton" onClick={handleSortClick} value="Sort"/>
     <hr/>
     {output}
+    <br/>
+    <br/>
+    <br/>
+    <label>Speed<br/><input type="range" id="speedInput"/></label>
     </>
   )
 }

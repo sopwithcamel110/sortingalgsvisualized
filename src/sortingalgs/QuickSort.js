@@ -13,14 +13,14 @@ async function partition(setOut, nums, lo, hi) {
             right--;
         }
         if (left <= right) {
-            SortUtil.swapElements(nums, left, right);
+            SortUtil.swapElements(nums, left, right)
             left++;
             right--;
         }
     }
     SortUtil.swapElements(nums, left, hi)
     await setOut(SortUtil.arrToString(nums, ","))
-    await new Promise(r => setTimeout(r, 1000));
+    await SortUtil.wait()
     return left;
 }
 
