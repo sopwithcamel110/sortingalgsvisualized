@@ -1,3 +1,4 @@
+![](https://github.com/sopwithcamel110/sortingalgsvisualized/blob/master/VisualSortsDemo.gif)
 ## How to Run
 
 In the project directory, you can run:
